@@ -12,7 +12,15 @@ let expenses = [
   },
 ];
 
-console.log(...expenses);
+let arrValues = [];
+for (let objectExpenses of expenses) {
+  // первый цикл перебирает объекты
+  for (let valueExpenses of objectExpenses.expenses) {
+    // второй цикл беребирает массив объекта
+    arrValues.push(valueExpenses); // все пушится в новый масссив
+  }
+}
+console.log(arrValues);
 
 // expenses.forEach(function(expens,index,expenses){
 //    console.log(`element: ${expens}, index: ${index}, length: ${expenses.length}`)
