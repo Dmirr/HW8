@@ -12,6 +12,24 @@ let expenses = [
   },
 ];
 
+let expensesDate = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+expensesDate.forEach(function (value, index, values) {
+  console.log(`month: ${value}, index: ${index}, length: ${values.length}`);
+});
+
 let arrValues = [];
 for (let objectExpenses of expenses) {
   // первый цикл перебирает объекты
