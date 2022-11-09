@@ -16,27 +16,18 @@ let arrValues = [];
 for (let objectExpenses of expenses) {
   // первый цикл перебирает объекты
   for (let valueExpenses of objectExpenses.expenses) {
-    // второй цикл беребирает массив объекта
+    // второй цикл перебирает массив объекта
     arrValues.push(valueExpenses); // все пушится в новый масссив
   }
 }
-console.log(arrValues);
 
-// expenses.forEach(function(expens,index,expenses){
-//    console.log(`element: ${expens}, index: ${index}, length: ${expenses.length}`)
-//      })
+const filterExpenses = arrValues.filter((value) => {
+  return value > 1000;
+});
+console.log(filterExpenses);
 
-//let newExpenses = expenses.concat(expenses)
-//console.log(newExpenses)
-
-// const expensesTotal = expenses.map(( expenses) => {
-//         return {
-//          expenses
-//      }
-//      })
-//      console.log(expensesTotal)
-
-// const filterexpenses = expenses.filter((expenses) => {
-//   return expenses > 1000;
-// });
-// console.log(filterexpenses);
+let SumHighExpenses = 0;
+for (let value of filterExpenses) {
+  SumHighExpenses += value;
+}
+console.log(SumHighExpenses);
