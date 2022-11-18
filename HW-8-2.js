@@ -12,24 +12,6 @@ let expenses = [
   },
 ];
 
-let expensesDate = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-expensesDate.forEach(function (value, index, values) {
-  console.log(`month: ${value}, index: ${index}, length: ${values.length}`);
-});
-
 let arrValues = [];
 for (let objectExpenses of expenses) {
   // первый цикл перебирает объекты
@@ -39,16 +21,13 @@ for (let objectExpenses of expenses) {
   }
 }
 
-const filterExpenses = arrValues.filter((value) => {
-  return value <= 1000;
-});
-console.log(filterExpenses);
+for (let eachObject of expenses) {
+  let eachExpenses = eachObject.expenses.length;
 
-const numberOfExpensies = arrValues.map((value, index) => {
-  return {
-    id: index,
-    expenses: value,
-  };
-});
-
-console.log(numberOfExpensies);
+  for (let i = 0; i < eachExpenses; i++) {
+    if (eachObject.expenses[i] < 1000) {
+      const month = new Date(`${i + 1}`).toString().split(" ").slice(1, -7);
+      console.log(month + " " + "and expenses " + eachObject.expenses[i]);
+    }
+  }
+}
